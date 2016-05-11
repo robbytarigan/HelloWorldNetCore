@@ -236,3 +236,5 @@ _Pvt_Extensions
 
 # Generated Node tools
 wwwroot/lib/
+wwwroot/images/*.jpg
+Migrations/
