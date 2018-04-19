@@ -1,2 +1,2 @@
-# HelloWorldNetCore1
-Hello world .NET Core 1.0
+ # Hello World Examples using .NET Core
+Hello World Examples using .NET Core
