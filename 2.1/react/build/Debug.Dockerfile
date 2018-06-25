@@ -26,3 +26,12 @@ RUN apt-get install zip unzip
 RUN curl -sSL https://aka.ms/getvsdbgsh | bash /dev/stdin -v latest -l ~/vsdbg
 
 EXPOSE 2222
+
+#COPY start_ssh_and_app.sh /app/sample/
+
+CMD /app/sample/start_ssh_and_app.sh
+
+#If you wish to only have SSH running and start 
+#your service when you start debugging
+#then use just the SSH server
+#CMD ["/usr/sbin/sshd", "-D"]
