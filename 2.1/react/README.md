@@ -1,3 +1,6 @@
+# Sample VS Code launch.json
+
+```json
 {
     // Use IntelliSense to find out which attributes exist for C# debugging
     // Use hover for the description of the existing attributes
@@ -80,3 +83,21 @@
         }
     ]
 }
+```
+
+# How to call MIEngine from Visual Studio
+From Command Window, type:
+```
+DebugAdapterHost.Launch /LaunchJson:"E:\dockerdata\dotnetexplore\app\HelloWorldNetCore\2.1\react\MIEngineConfig\MIEngineAttach.json"
+```
+
+# How to run docker
+First build image using build/Debug.Dockerfile:
+```
+docker build -f Debug.Dockerfile -t reactbuild:debug .
+```
+
+Run:
+```
+docker run --rm -it -p 8000:80 -p 8001:443 -p 2222:2222 -e ASPNETCORE_URLS="https://+;http://+" -e ASPNETCORE_HTTPS_PORT=8001 -e ASPNETCORE_ENVIRONMENT=Development -v $env:appdata\microsoft\UserSecrets\:/root/.microsoft/usersecrets -v $env:userprofile\.aspnet\https:/root/.aspnet/https/ -v e:/dockerdata/dotnetexplore/app/HelloWorldNetCore/2.1/react/:/app -w /app/sample reactbuild:debug
+```
