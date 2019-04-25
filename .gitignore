@@ -1,7 +1,7 @@
 # Visual Studio
-2.1/react/.vs/react/v15/.suo
-2.1/react/.vs/react/v15/Server/sqlite3/db.lock
+.vs/
 
 # Visual Studio Code
-.vs
-.vscode
+.vscode/
+bin/
+obj/

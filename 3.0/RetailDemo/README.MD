@@ -1,0 +1,1 @@
+Sample NServiceBus demo using .NET Core 3.0.
