@@ -8,3 +8,5 @@ obj/
 
 # NServiceBus
 .learningtransport/
+.db/
+.logs/

@@ -14,6 +14,11 @@ namespace Sales
 
             var transport = endpointConfiguration.UseTransport<LearningTransport>();
 
+            #region NoDelayedEntries
+            var recoverability = endpointConfiguration.Recoverability();
+            recoverability.Delayed(delayed => delayed.NumberOfRetries(0));
+            #endregion
+
             var endpointInstance = await Endpoint.Start(endpointConfiguration).ConfigureAwait(false);
 
             Console.WriteLine("Press Enter to exit.");

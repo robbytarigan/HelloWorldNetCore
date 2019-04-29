@@ -16,9 +16,13 @@ namespace Sales {
             log.Info($"Received PlaceOrder, OrderId = {message.OrderId}");
 
             // This is where normally some business logic would occur
-            if (random.Next(0, 5) == 0) {
-                throw new Exception("Oops");
-            }
+            // Transient error
+            // if (random.Next(0, 5) == 0) {
+            //     throw new Exception("Oops");
+            // }
+
+            // Throwing a systematic exception
+            // throw new Exception("BOOM");
             
             var orderPlaced = new OrderPlaced { OrderId = message.OrderId };
 
