@@ -1,0 +1,1 @@
+NServiceBus demo example using Docker and SQL Server transport.

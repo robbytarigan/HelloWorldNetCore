@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-CTP2.2-ubuntu
+    environment: 
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=1q2w3e4r.
+    ports:
+      - "1433:1433"
+    healthcheck:
+          test: ["CMD-SHELL", "if /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P 1q2w3e4r. -l 30; then \nexit 0 \nfi \nexit 1"]
+          interval: 10s
+          retries: 5
